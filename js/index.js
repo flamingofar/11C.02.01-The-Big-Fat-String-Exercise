@@ -1,5 +1,5 @@
 /** @format */
-
+"use strict;";
 console.log("Hi");
 
 const input = document.querySelector(".input");
@@ -20,10 +20,13 @@ function computeInput() {
 	switch (selectValue) {
 		case "0":
 			name = input.value.toLowerCase();
-			console.log(`${name.substring(0, 1).toUpperCase()}${name.substring(1)}`);
+			output.value = `${name.substring(0, 1).toUpperCase()}${name.substring(
+				1
+			)}`;
 			break;
 		case "1":
-			console.log("1");
+			name = input.value.substring(0, input.value.indexOf(" "));
+			output.value = name;
 			break;
 		case "2":
 			console.log("2");
