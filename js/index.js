@@ -29,7 +29,9 @@ function computeInput() {
 			output.value = name;
 			break;
 		case "2":
-			console.log("2");
+			name = input.value.substring(0, input.value.indexOf(" ")).length;
+			output.value = name;
+			console.log(name);
 			break;
 		case "3":
 			console.log("3");
