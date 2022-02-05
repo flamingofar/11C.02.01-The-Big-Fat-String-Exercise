@@ -11,7 +11,8 @@ let name;
 window.addEventListener("DOMContentLoaded", start);
 
 function start() {
-	// input.value = "";
+	input.value = "";
+	output.value = "";
 	btn.addEventListener("click", computeInput);
 }
 
