@@ -45,7 +45,13 @@ function computeInput() {
 			console.log(outputStr);
 			break;
 		case "4":
-			console.log("4");
+			name = input.value.substring(input.value.indexOf("."));
+			if (name === ".jpg" || name === ".png") {
+				output.value = `${input.value} is an image file`;
+			} else {
+				output.value = `${input.value} is not an image file`;
+			}
+			console.log(name);
 			break;
 		case "5":
 			console.log("5");
