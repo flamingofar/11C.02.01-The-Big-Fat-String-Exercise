@@ -20,9 +20,7 @@ function computeInput() {
 	switch (selectValue) {
 		case "0":
 			name = input.value.toLowerCase();
-			output.value = `${name.substring(0, 1).toUpperCase()}${name.substring(
-				1
-			)}`;
+			output.value = `${name[0].toUpperCase()}${name.substring(1)}`;
 			break;
 		case "1":
 			name = input.value.substring(0, input.value.indexOf(" "));
@@ -62,7 +60,34 @@ function computeInput() {
 				.toLowerCase()}${thirdLetter}${input.value.substring(3).toLowerCase()}`;
 			break;
 		case "7":
-			console.log("7");
+			const arrSpaces = input.value.split(" ");
+			let newArr = [],
+				convArr = [],
+				converted;
+
+			for (let i = 0; i < arrSpaces.length; i++) {
+				newArr.push(
+					`${arrSpaces[i].substring(0, 1).toUpperCase()}${arrSpaces[
+						i
+					].substring(1)}`
+				);
+				let indexOfDash,
+					el = newArr[i];
+				if (el.includes("-")) {
+					indexOfDash = el.indexOf("-");
+
+					let firstPart = el.substring(0, indexOfDash + 1);
+					let upperCase = el
+						.substring(indexOfDash + 1, indexOfDash + 2)
+						.toUpperCase();
+					let lastPart = el.substring(indexOfDash + 2);
+					el = `${firstPart}${upperCase}${lastPart}`;
+				}
+				convArr.push(el);
+			}
+
+			converted = convArr.join(" ");
+			output.value = converted;
 			break;
 	}
 }
