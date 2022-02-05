@@ -56,7 +56,10 @@ function computeInput() {
 			output.value = star.repeat(password);
 			break;
 		case "6":
-			console.log("6");
+			let thirdLetter = input.value.substring(2, 3).toUpperCase();
+			output.value = `${input.value
+				.substring(0, 2)
+				.toLowerCase()}${thirdLetter}${input.value.substring(3).toLowerCase()}`;
 			break;
 		case "7":
 			console.log("7");
