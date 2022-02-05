@@ -11,7 +11,7 @@ let name;
 window.addEventListener("DOMContentLoaded", start);
 
 function start() {
-	input.value = "";
+	// input.value = "";
 	btn.addEventListener("click", computeInput);
 }
 
@@ -34,7 +34,15 @@ function computeInput() {
 			console.log(name);
 			break;
 		case "3":
-			console.log("3");
+			let startPos, endPos, outputStr;
+			name = input.value
+				.substring(input.value.indexOf(" "), input.value.lastIndexOf(" "))
+				.trim();
+			startPos = input.value.indexOf(name);
+			endPos = input.value.substring(0, input.value.lastIndexOf(" ")).length;
+			outputStr = `${name}. Start position is ${startPos}. End position is ${endPos}`;
+			output.value = outputStr;
+			console.log(outputStr);
 			break;
 		case "4":
 			console.log("4");
