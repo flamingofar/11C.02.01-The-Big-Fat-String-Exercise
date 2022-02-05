@@ -31,7 +31,6 @@ function computeInput() {
 		case "2":
 			name = input.value.substring(0, input.value.indexOf(" ")).length;
 			output.value = name;
-			console.log(name);
 			break;
 		case "3":
 			let startPos, endPos, outputStr;
@@ -42,7 +41,6 @@ function computeInput() {
 			endPos = input.value.substring(0, input.value.lastIndexOf(" ")).length;
 			outputStr = `${name}. Start position is ${startPos}. End position is ${endPos}`;
 			output.value = outputStr;
-			console.log(outputStr);
 			break;
 		case "4":
 			name = input.value.substring(input.value.indexOf("."));
@@ -51,10 +49,11 @@ function computeInput() {
 			} else {
 				output.value = `${input.value} is not an image file`;
 			}
-			console.log(name);
 			break;
 		case "5":
-			console.log("5");
+			let password = input.value.length;
+			let star = "*";
+			output.value = star.repeat(password);
 			break;
 		case "6":
 			console.log("6");
