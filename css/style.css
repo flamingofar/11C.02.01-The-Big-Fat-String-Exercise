@@ -1,0 +1,30 @@
+/** @format */
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+div {
+	margin: auto;
+	width: 25vw;
+	height: 50vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+div > * {
+	width: 100%;
+	margin-bottom: 0.2rem;
+}
+
+button {
+	width: 50%;
+}
+
+.output {
+	pointer-events: none;
+	background-color: rgb(211, 211, 211);
+}
