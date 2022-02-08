@@ -61,34 +61,13 @@ function computeInput() {
 				.toLowerCase()}${thirdLetter}${input.value.substring(3).toLowerCase()}`;
 			break;
 		case "7":
-			const arrSpaces = input.value.split(" ");
-			let newArr = [],
-				convArr = [],
-				converted;
-
-			for (let i = 0; i < arrSpaces.length; i++) {
-				newArr.push(
-					`${arrSpaces[i].substring(0, 1).toUpperCase()}${arrSpaces[
-						i
-					].substring(1)}`
-				);
-				let indexOfDash,
-					el = newArr[i];
-				if (el.includes("-")) {
-					indexOfDash = el.indexOf("-");
-
-					let firstPart = el.substring(0, indexOfDash + 1);
-					let upperCase = el
-						.substring(indexOfDash + 1, indexOfDash + 2)
-						.toUpperCase();
-					let lastPart = el.substring(indexOfDash + 2);
-					el = `${firstPart}${upperCase}${lastPart}`;
+			const textArr = input.value.split("");
+			textArr.forEach((el, idx, arr) => {
+				if (el === "-" || el === " ") {
+					arr[idx + 1] = arr[idx + 1].toUpperCase();
 				}
-				convArr.push(el);
-			}
-
-			converted = convArr.join(" ");
-			output.value = converted;
-			break;
+			});
+			result = textArr.join("");
+			output.value = result;
 	}
 }
